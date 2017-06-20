@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Week-4-Game</title>
+	<link rel ="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel ="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+<body>
+	<h1> Crystal Collector <!-- <span id = "game"></span> --></h1>
+
+	<div id="instructions">
+	</div> 
+	<p>You will be given a randon number at the start of the game. 
+	<br>
+	<br>
+	There are four crystals below.  By clicking on a crystal you will add a specific amount of points to total score.
+	<br>
+	<br>
+	You win the game by matching your total score to the random number. You lose the game if your total goes above the random number.
+	<br>
+	<br>
+	The value of each crystal is hidden from you until you click on it.
+	<br>
+	<br>
+	Each time when the game starts, the game will change the values of each crystal.  </p>
+
+	<div id="random-number">
+	</div>
+
+	<div id="win-loss">
+	</div>
+
+	<div class="crystal-images">
+	<img id="crystal1" src="assets/images/crystal.jpg" width="100" height="100">
+	<img id="crystal2" src="assets/images/diamond.jpg" width="100" height="100">
+	<img id="crystal3" src="assets/images/emerald.jpg" width="100" height="100">
+	<img id="crystal4" src="assets/images/ruby.jpg" width="100" height="100">
+	</div>
+
+	<div id="score">
+	</div>
+
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+<script src="assets/javascript/game.js"></script>
+
+
+</body>
+</html>
