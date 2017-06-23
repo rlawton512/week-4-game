@@ -1,13 +1,42 @@
 
+body {
+	background-image: url("../images/horo.jpg");
+	background-size: cover;
+	/*margin-left: 0px*/
+	/*background-color: #eee;*/
+}
+
+h1 { 
+	font-family: 'Georgia', Times, Times New Roman, serif;
+	color: #ffffff;
+	text-align: center;
+	font-size: 50px;
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+#instructions {
+	padding: 20px;
+	border: 2px solid;
+	background-color: #ffffff;
+	width: 300px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 50px;
+}
 
 
-
-
-#random-number{
+#random-number, #win-loss, #score {
 	width:200px;
 	padding: 20px;
 	border: 2px solid;
 	background-color: #00FFFF;
-	font-size: 30px;
+	font-size: 20px;
 
+}
+
+.crystal-images {
+	float: right;
+	margin-top: -450px;
+	margin-right: 100px;
 }
