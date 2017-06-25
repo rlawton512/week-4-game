@@ -2,8 +2,7 @@
 body {
 	background-image: url("../images/horo.jpg");
 	background-size: cover;
-	/*margin-left: 0px*/
-	/*background-color: #eee;*/
+
 }
 
 h1 { 
@@ -19,24 +18,47 @@ h1 {
 	padding: 20px;
 	border: 2px solid;
 	background-color: #ffffff;
-	width: 300px;
+	width: 70%;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	margin-left: 50px;
+
 }
 
 
 #random-number, #win-loss, #score {
-	width:200px;
-	padding: 20px;
 	border: 2px solid;
 	background-color: #00FFFF;
 	font-size: 20px;
+	width: 70%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 50px;
+	padding: 30px;
+	text-align: center;
+
 
 }
 
-.crystal-images {
+.crystals {
 	float: right;
-	margin-top: -450px;
-	margin-right: 100px;
+	margin-top: -500px;
+	margin-right: 50px;
+	padding: 20px;
+	
 }
+
+#crystal1, #crystal2, #crystal3, #crystal4{
+	padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
