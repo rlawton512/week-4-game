@@ -1,141 +1,70 @@
 $(document).ready(function() {
 
 
-	var randomNumber; 
+	var randomNumber;
+	var crystalValue; 
 	var userScore = 0;
 	var wins=0;
 	var losses=0;
 
 	function initializeGameStart(){
+		//set userScore back to 0 and puts score on the page
+		userScore = 0;
+		$("#score").html("<p>Your Score:</p>" + userScore);
 
-	$(".crystals, #score").empty();
+		//display wins & losses 
+		$("#win-loss").html("<h2> Wins: " + wins + "</h2><br>" + "<h2> Losses: "+ losses + "</h2" );
+	
+		//set randon number as target number for the game 
+		randomNumber = Math.floor(Math.random()*120)+19;
+
+		//display random number on the page
+		$("#random-number").html("<p>Target Number:</p><br>" + randomNumber);
+
+		// $("crystalValue").empty();
+
+		//call the function to click on crystals and tally score 
+		buildCrystals();
 	
 	}
 
-		randomNumber = Math.floor(Math.random()*120)+19;
-		$("#random-number").html("<p>Target Number:</p><br>" + randomNumber);
+		
+	//function to display the score 
+	function setScore (){
+		if (userScore == randomNumber){
+			wins++;
+			initializeGameStart();
+		
+		} else if (userScore > randomNumber){
+			losses++;
+			initializeGameStart();
+		}	
+	}	
 
 		
 
+	//build crystal values 
+	function buildCrystals () {
+		for (i=0; i<4; i++){
+			//set crystal value to random number
+			crystalValue = Math.floor(Math.random()*12)+1;
+			//assign crystal value to our first crystal 
+			$("#crystal"+(i+1)).attr("data-crystalvalue",crystalValue);
+			$("#crystal"+(i+1)).on("click",function(){
 
-		$(".crystals").map(function() {
+				crystalValue = ($(this).attr("data-crystalvalue"));
+				crystalValue = parseInt(crystalValue);
+
+				userScore += crystalValue;
+				$("#score").html("<p>Your Score:</p>" + userScore);
+				setScore();
+			})
+		}		
+	}
+	
+	initializeGameStart ();
+
+})
 
 			
-			$("#win-loss").html("<h2> Wins: " + wins + "</h2><br>" + "<h2> Losses: "+ losses + "</h2" );
-			$("#score").html("<p>Your Score:</p>");
-
-			//set vaLue for Crystal 1
-			var crystalNumber1 = Math.floor(Math.random()*12)+1;
-			$("#crystal1").attr("data-crystalvalue",crystalNumber1);
-
-			$("#crystal1").on("click", function(){
-
-			var crystalValue1 = ($(this).attr("data-crystalvalue"));
-			crystalValue1 = parseInt(crystalValue1);
-
-			userScore += crystalValue1;
-			$("#score").html("<p>Your Score:</p>" + userScore);
-
-			if (userScore === randomNumber){
-			wins++;
-			alert("Winner!")
-			initializeGameStart();
-			} 
-
-			if (userScore >= randomNumber){
-			losses++;
-			alert("Better luck next time!");
-			initializeGameStart();
-			}	
 			
-			});	
-			
-			//set value for Crystal 2
-			var crystalNumber2 = Math.floor(Math.random()*12)+1;
-			$("#crystal2").attr("data-crystalvalue",crystalNumber2);	
-
-			$("#crystal2").on("click", function(){
-			var crystalValue2 = ($(this).attr("data-crystalvalue"));
-			crystalValue2 = parseInt(crystalValue2);
-
-			userScore += crystalValue2;
-			$("#score").html("<p>Your Score:</p>" + userScore);
-
-			if (userScore === randomNumber){
-			wins++;
-			alert("Winner");
-			initializeGameStart();
-			} 
-
-			if (userScore >= randomNumber){
-			losses++;
-			alert("Better luck next time!");
-			initializeGameStart();
-			}	
-			
-
-			});	
-
-			var crystalNumber3 = Math.floor(Math.random()*12)+1;
-			$("#crystal3").attr("data-crystalvalue",crystalNumber3);	
-
-			$("#crystal3").on("click", function(){
-			var crystalValue3 = ($(this).attr("data-crystalvalue"));
-			crystalValue3 = parseInt(crystalValue3);
-
-			userScore += crystalValue3;
-			$("#score").html("<p>Your Score:</p>" + userScore);
-
-			if (userScore === randomNumber){
-			wins++;
-			alert("Winner!!!");
-			initializeGameStart();
-			} 
-
-			if (userScore >= randomNumber){
-			losses++;
-			alert("Better luck next time!");
-			initializeGameStart();
-			}	
-
-			});		
-
-			//set value for crystal 4
-			var crystalNumber4 = Math.floor(Math.random()*12)+1;
-			$("#crystal4").attr("data-crystalvalue",crystalNumber4);	
-
-			$("#crystal4").on("click", function(){
-			var crystalValue4 = ($(this).attr("data-crystalvalue"));
-			crystalValue4 = parseInt(crystalValue4);
-
-			userScore += crystalValue4;
-			$("#score").html("<p>Your Score:</p>" + userScore);
-
-			if (userScore === randomNumber){
-			wins++;
-			alert("Winner!!!");
-			initializeGameStart();
-			} 
-
-			if (userScore >= randomNumber){
-			losses++;
-			alert("Better luck next time!");
-			initializeGameStart();
-			}	
-			});	
-
-			if (userScore === randomNumber){
-			wins++;
-			alert("Winner!!!");
-			initializeGameStart();
-			} 
-
-			if (userScore >= randomNumber){
-			losses++;
-			console.log("Better luck next time!");
-			initializeGameStart();
-			}	
-
-    	});
-
-});
